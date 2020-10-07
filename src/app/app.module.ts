@@ -12,6 +12,7 @@ import { AuthModule } from "./auth";
 import { BooksModule } from "./books";
 import { AppComponent } from "./app.component";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -30,4 +31,4 @@ import { AppComponent } from "./app.component";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

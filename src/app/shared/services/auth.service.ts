@@ -8,15 +8,15 @@ import { UserModel } from "../models/user.model";
   providedIn: "root"
 })
 export class AuthService {
+
   login(username: string, password: string) {
     if (password !== "password" || !username.trim()) {
-      return throwError(new Error("Invalid username or password"));
+      return throwError(new Error("invalid username or password"));
     }
 
     return timer(750).pipe(
       map(() => {
         const user = { id: uuid(), username };
-
         localStorage.setItem("auth", JSON.stringify(user));
 
         return user;

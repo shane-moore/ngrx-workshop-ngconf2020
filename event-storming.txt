@@ -1,0 +1,16 @@
+All the events / ways you can interact with it
+
+[Books Page] Create a book
+  - BookRequiredProps
+
+[Books Page] Update a book
+  - BookRequiredProps
+  - ID of the book being edited
+
+[Books Page] Delete a book
+  - ID of the book being deleted
+
+[Books Page] Cancel editing a book
+
+Who's the actor of the system that causes these?
+user on the books pages

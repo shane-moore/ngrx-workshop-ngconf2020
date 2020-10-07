@@ -1,6 +1,7 @@
 import { createAction, props } from "@ngrx/store";
 import { BookRequiredProps } from "src/app/shared/models";
 
+// rememeber that actions aren't to be viewed as causing something to happen.  They're more descriptions of events that have already occured
 export const enter = createAction("[Books Page] Enter");
 
 export const selectBook = createAction(

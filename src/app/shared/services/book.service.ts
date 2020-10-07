@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import * as uuid from "uuid/v4";
 import { BookModel, BookRequiredProps } from "../models";
+import { mergeMap } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 const BASE_URL = "http://localhost:3000/books";
 const HEADER = {
@@ -12,7 +14,7 @@ const HEADER = {
   providedIn: "root"
 })
 export class BooksService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   all() {
     return this.http.get<BookModel[]>(BASE_URL);
@@ -27,6 +29,17 @@ export class BooksService {
       id: uuid(),
       ...bookProps
     };
+
+    // example to create lag on the switchMap in the effects file to where a user could click a bunch of times to creat book but only last one was
+    // return timer(3000).pipe(
+    //   mergeMap(() => {
+    //     return this.http.post<BookModel>(
+    //       `${BASE_URL}`,
+    //       JSON.stringify(Book),
+    //       HEADER
+    //     );
+    //   })
+    // );
 
     return this.http.post<BookModel>(
       `${BASE_URL}`,
