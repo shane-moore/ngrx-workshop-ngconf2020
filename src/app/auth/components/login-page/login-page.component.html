@@ -5,9 +5,6 @@
   <router-outlet *ngIf="user$ | async; else loginForm"></router-outlet>
 
   <ng-template #loginForm>
-    <app-login-form
-      [error]="error$ | async"
-      (login)="onLogin($event)"
-    ></app-login-form>
+    <app-login-form [error]="error$ | async" (login)="onLogin($event)"></app-login-form>
   </ng-template>
 </ng-template>

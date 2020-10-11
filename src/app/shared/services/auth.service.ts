@@ -18,7 +18,6 @@ export class AuthService {
       map(() => {
         const user = { id: uuid(), username };
         localStorage.setItem("auth", JSON.stringify(user));
-
         return user;
       })
     );
